@@ -1,0 +1,23 @@
+research_task:
+  description: >
+    Conduct a thorough research about {topic}
+    Make sure you find any interesting and relevant information given
+    the current year is {current_year}.
+  expected_output: >
+    A JSON object containing only a list of strings named 'sections'. 
+    Example: {"sections": ["course 1", "course 2"]}
+    Do not include 'properties', 'type', or 'required' keys in the final JSON.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+    The information should be organized in a way that is easy to read and understand.
+    Make sure to include any relevant data, statistics, and examples to support the information in the report.
+    Make sure to provide a title for the report and for each section.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Formatted as a structured report with a title and sections. 
+    Report should also have report title and conclusion along with list of sections.
+  agent: reporting_analyst

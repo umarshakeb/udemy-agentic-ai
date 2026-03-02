@@ -1,0 +1,8 @@
+.env
+__pycache__/
+.DS_Store
+tests/
+report.md
+uv.lock
+knowledge/
+.venv/
