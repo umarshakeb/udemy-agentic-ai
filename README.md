@@ -1,6 +1,25 @@
-# Udemyagentic Crew
+# 🤖 Udemy Agentic AI Research Crew
 
-Welcome to the Udemyagentic Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An autonomous multi-agent system designed to perform deep-market research on Advancements in AI and LLMs in medical field. Built with **CrewAI** and powered by local LLMs via **Ollama**.
+
+## 🚀 Key Features
+- **Multi-Agent Orchestration:** Utilizes a Senior Data Researcher and a Reporting Analyst to decompose complex research tasks.
+- **Local LLM Integration:** Runs **Qwen 2.5 (3B)** locally via Ollama to ensure data privacy and zero API costs.
+- **AI Observability:** Integrated with **OpenInference** and **LiteLLM** for real-time tracing of agent "thought" trajectories.
+## Future Work
+- **GPU Optimized:** Configuration for NVIDIA CUDA acceleration to handle high-token throughput on consumer hardware.
+
+## 🛠️ Tech Stack
+- **Framework:** CrewAI
+- **Inference:** Ollama (Local)
+- **Monitoring:** OpenInference / OpenTelemetry
+- **Environment:** Python (Managed by `uv`)
+
+## 📋 How to Run
+1. Ensure Ollama is running: `ollama run qwen2.5:3b`
+2. Install dependencies: `uv sync`
+3. Run the crew: `crewai run`
+
 
 ## Installation
 
@@ -27,28 +46,3 @@ crewai install
 - Modify `src/udemyagentic/crew.py` to add your own logic, tools and specific args
 - Modify `src/udemyagentic/main.py` to add custom inputs for your agents and tasks
 
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the UdemyAgentic Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The UdemyAgentic Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the Udemyagentic Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
