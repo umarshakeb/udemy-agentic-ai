@@ -3,9 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import (Any, List)
 from pydantic import BaseModel, Field
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+
 
 import litellm
 litellm.telemetry = False
@@ -43,11 +41,11 @@ class Udemyagentic():
     agents: List[BaseAgent]
     tasks: List[Task]
 
-    # Learn more about YAML configuration files here:
+    # Adding these 2 URLs for future refernce:
     # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
     # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
     
-    # If you would like to add tools to your agents, you can learn more about it here:
+    # URL to add more tools to agents:
     # https://docs.crewai.com/concepts/agents#agent-tools
     @agent
     def researcher(self) -> Agent:
@@ -65,8 +63,7 @@ class Udemyagentic():
             llm = llm
         )
 
-    # To learn more about structured task outputs,
-    # task dependencies, and task callbacks, check out the documentation:
+    # Documentation for structured task outputs,task dependencies, and task callbacks:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
     def research_task(self) -> Task:
@@ -95,5 +92,5 @@ class Udemyagentic():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
+            # process=Process.hierarchical, # In case we need hierarchical -  https://docs.crewai.com/how-to/Hierarchical/
         )
